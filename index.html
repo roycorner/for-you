@@ -2,90 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Our Story Begins</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Georgia', serif;
       background: linear-gradient(to right, #fceabb, #f8b500);
-      color: #4b3832;
+      font-family: 'Georgia', serif;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      text-align: center;
-      overflow: hidden;
+      margin: 0;
+      color: #4b3832;
     }
-
     .container {
-      max-width: 600px;
+      background: rgba(255,255,255,0.85);
       padding: 30px;
-      background: rgba(255, 255, 255, 0.8);
       border-radius: 16px;
+      text-align: center;
       box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
-
-    h1, h2, p {
-      margin: 20px 0;
-    }
-
     button {
-      padding: 12px 24px;
-      font-size: 1rem;
       background-color: #e85a4f;
       color: white;
       border: none;
-      border-radius: 12px;
+      padding: 12px 20px;
+      border-radius: 8px;
       cursor: pointer;
+      font-size: 1rem;
       margin-top: 20px;
-      transition: transform 0.3s ease;
     }
-
     button:hover {
-      transform: scale(1.05);
+      opacity: 0.9;
     }
-
-    .fade-in {
-      opacity: 0;
-      animation: fadeIn 2s forwards;
-    }
-
-    .delay-1 { animation-delay: 1s; }
-    .delay-2 { animation-delay: 2s; }
-    .delay-3 { animation-delay: 3s; }
-    .delay-4 { animation-delay: 4s; }
-
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
-
     .hidden {
       display: none;
-    }
-
-    #response {
-      margin-top: 20px;
-      font-style: italic;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1 class="fade-in">Would you...</h1>
-    <h2 class="fade-in delay-1">like to paint the canvas of our story together?</h2>
-    <p class="fade-in delay-2">Karena bagiku, kamu adalah warna yang selalu ku cari 🍃</p>
-    
-    <button onclick="showAnswer()" class="fade-in delay-3">Yes, I do 💖</button>
-    <p id="response" class="fade-in delay-4 hidden">Then let's create something beautiful together, starting today ✨</p>
+    <h1>Would you...</h1>
+    <h2>like to paint the canvas of our story together?</h2>
+    <p>Karena bagiku, kamu adalah warna yang selalu ku cari 🍃</p>
+    <button onclick="showText()">Yes, I do 💖</button>
+    <p class="hidden" id="message">Then let's create something beautiful together ✨</p>
   </div>
-
   <script>
-    function showAnswer() {
-      const response = document.getElementById("response");
-      response.classList.remove("hidden");
+    function showText() {
+      document.getElementById('message').classList.remove('hidden');
     }
   </script>
 </body>
